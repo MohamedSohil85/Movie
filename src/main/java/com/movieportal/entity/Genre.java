@@ -1,0 +1,5 @@
+package com.movieportal.entity;
+
+public enum Genre {
+    ADULT,ROMANCE,CRIME,DRAMA,ANIMATION,COMEDY,ACTION,HORROR,FAMILY,MUSIC,WAR,SPORT,DECO,FANTASY
+}
