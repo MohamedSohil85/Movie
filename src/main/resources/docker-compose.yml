@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  movie:
+    container_name: movie-portal
+    image: movie-portal
+    ports:
+      - '8080:8080'
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://psqdb:5432/movieportal
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=12345
+    depends_on:
+      - psqdb
+
+  psqdb:
+    container_name: psqdb
+    image: postgres
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=12345
+      - POSTGRES_DB=movieportal
